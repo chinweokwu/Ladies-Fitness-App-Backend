@@ -1,23 +1,18 @@
 class Api::V1::ExcerisesController < ApiController
   before_action :set_excerise, only: [:show]
-  before_action :get_workout
 
   def index
-    @excerises = @workout.excerises
+    excerises = Excerise.all
 
-    render json: @excerises
+    render json: ExceriseSerializer.new(excerises).serialized_json, status: :ok
   end
 
   def show
-    render json: @excerise
+    render json: ExceriseSerializer.new(@excerise).serialized_json, status: :ok
   end
 
   private
-  def get_workout
-    @workout = Workout.find(params[:workout_id])
-  end
-
   def set_excerise
-    @excerise = @workout.excerise.find(params[:id])
+    @excerise = Excerise.find(params[:id])
   end
 end
