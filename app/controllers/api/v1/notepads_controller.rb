@@ -1,5 +1,5 @@
 class Api::V1::NotepadsController < ApiController
-  before_action :set_notepad, only: %i[show destroy]
+  before_action :set_notepad, only: %i[destroy]
 
   def index
     @notepads = Notepad.all
