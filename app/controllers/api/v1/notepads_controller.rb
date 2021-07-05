@@ -11,7 +11,7 @@ class Api::V1::NotepadsController < ApiController
     @notepad = Notepad.new(notepad_params)
 
     if @notepad.save
-      render json: @notepad, status: :created, location: @notepad
+      render json: @notepad, status: :created
     else
       render json: @notepad.errors, status: :unprocessable_entity
     end

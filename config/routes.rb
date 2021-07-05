@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :notepads,only: [:index, :create, :destroy]
       resources :workouts, only: [:show, :index]
       resources :excerises, only: [:show, :index]
+      resources :calories,only: [:index, :create, :destroy]
     end
   end
 end

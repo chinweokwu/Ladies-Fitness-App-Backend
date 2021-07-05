@@ -11,7 +11,7 @@ class Api::V1::CaloriesController < ApiController
     @calory = Calory.new(calory_params)
 
     if @calory.save
-      render json: @calory, status: :created, location: @calory
+      render json: @calory, status: :created
     else
       render json: @calory.errors, status: :unprocessable_entity
     end
@@ -23,7 +23,7 @@ class Api::V1::CaloriesController < ApiController
 
   private
 
-  def set_notepad
+  def set_calory
     @calory = Calory.find(params[:id])
   end
 
