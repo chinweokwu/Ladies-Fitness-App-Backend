@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :notepads,only: [:index, :create, :destroy]
-      resources :workouts, only: [:show, :index]
+      resources :workouts, only: [:show, :index] do
       resources :excerises, only: [:show, :index]
+      end
       resources :calories,only: [:index, :create, :destroy]
     end
   end
