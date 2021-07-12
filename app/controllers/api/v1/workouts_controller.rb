@@ -1,4 +1,6 @@
 class Api::V1::WorkoutsController < ApiController
+  before_action :authenticate_user!
+
   def index
     workouts = Workout.all
 

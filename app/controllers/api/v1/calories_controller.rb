@@ -1,4 +1,5 @@
 class Api::V1::CaloriesController < ApiController
+  before_action :authenticate_user!
   before_action :set_calory, only: %i[destroy]
 
   def index
@@ -28,6 +29,6 @@ class Api::V1::CaloriesController < ApiController
   end
 
   def calory_params
-    params.require(:calory).permit(:date, :calories_lost)
+    params.require(:calory).permit(:date, :calories_lost, :user_id)
   end
 end

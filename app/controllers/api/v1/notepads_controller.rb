@@ -1,4 +1,5 @@
 class Api::V1::NotepadsController < ApiController
+  before_action :authenticate_user!
   before_action :set_notepad, only: %i[destroy]
 
   def index
@@ -28,6 +29,6 @@ class Api::V1::NotepadsController < ApiController
   end
 
   def notepad_params
-    params.require(:notepad).permit(:title, :body)
+    params.require(:notepad).permit(:title, :body, :user_id)
   end
 end

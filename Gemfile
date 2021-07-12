@@ -28,6 +28,7 @@ gem 'activeadmin'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'sassc-rails'
 gem 'fast_jsonapi'
+gem 'jwt'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
