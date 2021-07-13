@@ -1,5 +1,4 @@
 class Api::V1::NotepadsController < ApiController
-  before_action :authenticate_user!
   before_action :set_notepad, only: %i[destroy]
 
   def index

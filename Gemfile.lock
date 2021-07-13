@@ -92,6 +92,8 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
     ffi (1.15.3)
@@ -240,10 +242,12 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   byebug
   devise (~> 4.7, >= 4.7.3)
   factory_bot_rails
+  faker
   fast_jsonapi
   jwt
   listen (~> 3.3)

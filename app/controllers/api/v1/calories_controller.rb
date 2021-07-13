@@ -1,5 +1,4 @@
 class Api::V1::CaloriesController < ApiController
-  before_action :authenticate_user!
   before_action :set_calory, only: %i[destroy]
 
   def index
