@@ -12,6 +12,6 @@ class Api::V1::WorkoutsController < ApiController
   end
 
   def options
-    @options ||= { include: %i[excerises]}
+    @options ||= { include: %i[excerises] }
   end
 end

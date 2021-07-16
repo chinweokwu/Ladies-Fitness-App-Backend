@@ -1,6 +1,6 @@
 class Api::V1::ExcerisesController < ApiController
   before_action :set_excerise, only: [:show]
-
+  
   def index
     excerises = Excerise.all
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_01_005226) do
+ActiveRecord::Schema.define(version: 2021_07_15_162409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 2021_07_01_005226) do
     t.string "calories_lost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_calories_on_user_id"
   end
 
   create_table "excerises", force: :cascade do |t|
@@ -62,6 +64,16 @@ ActiveRecord::Schema.define(version: 2021_07_01_005226) do
     t.string "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_notepads_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "workouts", force: :cascade do |t|
@@ -71,5 +83,7 @@ ActiveRecord::Schema.define(version: 2021_07_01_005226) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "calories", "users"
   add_foreign_key "excerises", "workouts"
+  add_foreign_key "notepads", "users"
 end

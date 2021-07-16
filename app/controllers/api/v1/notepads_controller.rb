@@ -2,13 +2,13 @@ class Api::V1::NotepadsController < ApiController
   before_action :set_notepad, only: %i[destroy]
 
   def index
-    @notepads = Notepad.all
+    @notepads = current_user.notepads
 
     render json: @notepads
   end
 
   def create
-    @notepad = Notepad.new(notepad_params)
+    @notepad = current_user.notepads.build(notepad_params)
 
     if @notepad.save
       render json: @notepad, status: :created

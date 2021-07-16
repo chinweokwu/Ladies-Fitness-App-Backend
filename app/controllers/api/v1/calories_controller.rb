@@ -2,13 +2,13 @@ class Api::V1::CaloriesController < ApiController
   before_action :set_calory, only: %i[destroy]
 
   def index
-    @calories = Calory.all
+    @calories = current_user.calories
 
     render json: @calories
   end
 
   def create
-    @calory = Calory.new(calory_params)
+    @calory = current_user.calories.build(calory_params)
 
     if @calory.save
       render json: @calory, status: :created
