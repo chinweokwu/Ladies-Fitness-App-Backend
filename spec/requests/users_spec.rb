@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
@@ -11,17 +12,17 @@ RSpec.describe 'Users', type: :request do
   describe 'POST /signup' do
     describe 'when valid request' do
       it 'creates a new user' do
-        post '/signup', params: valid_attributes.to_json, headers: headers 
+        post '/signup', params: valid_attributes.to_json, headers: headers
         expect(response).to have_http_status(201)
       end
 
       it 'returns success message' do
-        post '/signup', params: valid_attributes.to_json, headers: headers 
+        post '/signup', params: valid_attributes.to_json, headers: headers
         expect(json['message']).to match(/Account created successfully/)
       end
 
       it 'returns an authentication token' do
-        post '/signup', params: valid_attributes.to_json, headers: headers 
+        post '/signup', params: valid_attributes.to_json, headers: headers
         expect(json['auth_token']).not_to be_nil
       end
     end
@@ -40,3 +41,4 @@ RSpec.describe 'Users', type: :request do
     end
   end
 end
+# rubocop:enable Layout/LineLength

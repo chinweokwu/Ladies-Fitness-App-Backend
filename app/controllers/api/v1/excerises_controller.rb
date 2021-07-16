@@ -1,6 +1,6 @@
 class Api::V1::ExcerisesController < ApiController
   before_action :set_excerise, only: [:show]
-  
+
   def index
     excerises = Excerise.all
 
@@ -12,6 +12,7 @@ class Api::V1::ExcerisesController < ApiController
   end
 
   private
+
   def set_excerise
     @excerise = Excerise.find(params[:id])
   end

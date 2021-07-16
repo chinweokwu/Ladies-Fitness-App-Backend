@@ -11,11 +11,7 @@ class JsonWebToken
   end
 
   def self.valid_payload(payload)
-    if expired(payload) | payload['iss'] != meta[:iss] ||payload['aud'] != meta[:aud]
-      return false
-    else
-      return true
-    end
+    !(expired(payload) | payload['iss'] != meta[:iss] || payload['aud'] != meta[:aud])
   end
 
   def self.meta
@@ -26,7 +22,7 @@ class JsonWebToken
     }
   end
 
-  def self.expired(payload)
+  def self.expired(_payload)
     Time.at(paylaod['exp']) < Time.now
   end
 end

@@ -3,14 +3,14 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   post 'login', to: 'authentication#authenticate'
   post 'signup', to: 'users#create'
-    
+
   namespace :api do
     namespace :v1 do
-      resources :notepads,only: [:index, :create, :destroy]
-      resources :workouts, only: [:show, :index] do
-      resources :excerises, only: [:show, :index]
+      resources :notepads, only: %i[index create destroy]
+      resources :workouts, only: %i[show index] do
+        resources :excerises, only: %i[show index]
       end
-      resources :calories,only: [:index, :create, :destroy]
+      resources :calories, only: %i[index create destroy]
     end
   end
 end

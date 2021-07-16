@@ -6,7 +6,7 @@ describe 'Notepad API', type: :request do
   let!(:notepads) { create(:notepad, user_id: user.id) }
 
   describe 'GET /notepads' do
-    before  {  get '/api/v1/notepads', params: {}, headers: headers }
+    before { get '/api/v1/notepads', params: {}, headers: headers }
 
     it 'returns all notpads' do
       expect(response).to have_http_status(:success)

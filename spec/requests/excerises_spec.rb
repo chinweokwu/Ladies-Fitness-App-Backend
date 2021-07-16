@@ -5,7 +5,7 @@ describe 'Exceris API', type: :request do
   let(:headers) { valid_headers }
 
   describe 'GET /excerises' do
-    before  { get '/api/v1/workouts/:workout_id/excerises', params: {}, headers: headers }
+    before { get '/api/v1/workouts/:workout_id/excerises', params: {}, headers: headers }
 
     it 'returns all excerises' do
       expect(response).to have_http_status(:success)
