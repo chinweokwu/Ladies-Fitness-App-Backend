@@ -2,7 +2,7 @@ class Api::V1::CaloriesController < ApiController
   before_action :set_calory, only: %i[destroy]
 
   def index
-    @calories = current_user.calories
+    @calories = current_user.calories.order(created_at: :desc)
 
     render json: @calories
   end

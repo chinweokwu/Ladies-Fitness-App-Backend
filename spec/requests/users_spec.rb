@@ -8,7 +8,6 @@ RSpec.describe 'Users', type: :request do
     attributes_for(:user, password_confirmation: user.password)
   end
 
-  # User signup test suite
   describe 'POST /signup' do
     describe 'when valid request' do
       it 'creates a new user' do

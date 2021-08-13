@@ -2,7 +2,7 @@ class Api::V1::NotepadsController < ApiController
   before_action :set_notepad, only: %i[destroy]
 
   def index
-    @notepads = current_user.notepads
+    @notepads = current_user.notepads.order(created_at: :desc)
 
     render json: @notepads
   end
