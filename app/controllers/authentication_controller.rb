@@ -1,6 +1,6 @@
 class AuthenticationController < ApiController
   skip_before_action :authorize_request, only: :authenticate
-  # return auth token once user is authenticated
+
   def authenticate
     user = User.find_by(email: params[:email])
     auth_token =
