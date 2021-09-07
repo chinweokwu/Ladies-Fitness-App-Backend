@@ -26,7 +26,7 @@ module ExceptionHandler
   end
 
   def four_twenty_two(error)
-    json_response({ message: error.message }, :unprocessable entity)
+    json_response({ message: error.message }, :unprocessable_entity)
   end
 
   def unauthorized_request(error)
