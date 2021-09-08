@@ -1,24 +1,73 @@
-# README
+# Final Capstone Project: Home Workout App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> In this final capstone project, I completed the following tasks:
 
-Things you may want to cover:
+- Use Ruby on Rails to build a REST API to show lists of workouts.
+- Create a standard authentication service using JSON Web Token (JWT).
+- Provide routes for signup, login, calculate calories, delete calories, creates notes, delete notes.
+- Used Active admin to upload images for workouts.
+- Serve the request data in JSON format.
+- Test and deploy the app on Heroku.
 
-* Ruby version
 
-* System dependencies
+### Languages, Frameworks, Metthods
 
-* Configuration
+- Ruby
+- Ruby on Rails
+- RSpec-rails
+- ActiveAdmin
+- MVC
 
-* Database creation
+## 📝 Setup
 
-* Database initialization
+ - Open a terminal
+ 
+ - Clone this backend app: 
+        ```
+        git clone https://github.com/chinweokwu/Ladies-Fitness-App-Backend.git
+        ```
 
-* How to run the test suite
+- ```cd``` into the app directory.
 
-* Services (job queues, cache servers, search engines, etc.)
+- Run the command ```bundle install``` or just ```bundle``` to install the required gems.
 
-* Deployment instructions
+- In the project directory, run:
 
-* ...
+#### `rails server`
+
+
+### Check out upload workout images using active admin
+
+- Navigate to http://localhost:3001/admin/login
+- The default email & password: admin@example.com, password
+- Go to the workout dashboard and add a workout image link and create image.
+- You can also delete, workout, edit and upadate
+
+
+## Author
+
+👤 **Morah paul*
+
+- Github: [@chinweokwu](https://github.com/chinweokwu)
+- Linkedin: [chinweokwu](https://www.linkedin.com/in/morah-paul/)
+
+
+## 🤝 Contributing
+
+- Contributions, issues, and feature requests are welcome!
+
+- Feel free to check the [issues page](https://github.com/chinweokwu/Ladies-Fitness-App-Backend/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+
+## Acknowledgments
+
+- Microverse
+- etc
+
+## 📝 License
+
+This project is provided with MIT license.
